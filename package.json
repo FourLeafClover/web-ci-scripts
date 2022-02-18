@@ -1,0 +1,14 @@
+{
+  "name": "web-ci-script",
+  "version": "1.0.0",
+  "description": "gitlab-runner",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "web-ci": "./index.js"
+  },
+  "author": "frank zhang",
+  "license": "MIT"
+}

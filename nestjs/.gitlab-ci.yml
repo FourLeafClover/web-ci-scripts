@@ -1,0 +1,17 @@
+variables:
+  PROJECT_NAME: 'xxxx' # 已实际项目名称为主
+  PROJECT_PORT: xxxx # 端口号
+
+stages: # 分段
+  - deploy
+
+deploy-job:
+  tags:
+    - global-web-test
+  stage: deploy
+  script:
+    - npm i 
+    - docker rm -f $PROJECT_NAME || true
+    - docker rmi $PROJECT_NAME || true
+    - docker build -t $PROJECT_NAME .
+    - docker run -d --name $PROJECT_NAME -p $PROJECT_PORT:3000 $PROJECT_NAME
